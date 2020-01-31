@@ -6,8 +6,8 @@ namespace ecs {
     
     class component_input_player : public component_input {
 
-
-
+        void update(entity &entity, float delta) override;
+        
     };
 
 }

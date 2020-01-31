@@ -2,20 +2,28 @@
 #define __component_graphics__
 #include <algorithm>
 
+#include <SFML/Graphics/Sprite.hpp>
+
 #include "entity.hpp"
 #include "component.hpp"
-#include "../map_manager.hpp"
+#include "world/map_manager.hpp"
+#include "ui/window.hpp"
+#include "component_animation.hpp"
 
-
-namespace ecs{
+namespace ecs {
     
     class entity;
     class component_graphics : public component
     {
 
+        private:
+            component_animation m_animation;
+            sf::Sprite m_sprite;
+
         public:
 
-            void update(entity &entity, world::map_manager &map_manager, float delta);
+            void set_animation(component_animation &animation);
+            void update(entity &entity, ui::window &window, float delta);
 
 
     };

@@ -1,14 +1,18 @@
 #ifndef __component_input__
 #define __component_input__
 #include "component.hpp"
+#include "entity.hpp"
 
-class component_input : public component {
-    
-    public:
 
-        void update(float delta)
-        {
+namespace ecs{ 
 
-        }
-};
+class entity;
+    class component_input : public component {
+        
+        public:
+
+            virtual void update(entity &entity, float delta) = 0;
+    };
+
+}
 #endif

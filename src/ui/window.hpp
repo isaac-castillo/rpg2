@@ -6,12 +6,13 @@ namespace ui {
     class window : public sf::RenderWindow {
 
 
-        const int WIDTH = 600;
-        const int HEIGHT = 400;
+        private:
+            static const int WIDTH = 600;
+            static const int HEIGHT = 400;
 
         public:
-            window();
             static std::unique_ptr<window> default_window();
+            window();
 
 
     };

@@ -22,5 +22,6 @@ res = subprocess.run(['cmake', '..'], check=True)
 res = subprocess.run(['cmake', '--build', '.'], check=False)
 
 if res.returncode == 0:
+    if os.path.exists('../rpg2')
     os.remove('../rpg2')
     shutil.move('src/rpg2', '..')

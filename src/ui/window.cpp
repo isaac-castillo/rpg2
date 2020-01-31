@@ -2,14 +2,15 @@
 
 namespace ui {
 
-    
-    window::window(){
-        
-    }    
+window::window() : RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "rpg2")
+{
+ 
+};
 
-    std::unique_ptr<window> window::default_window(){
+std::unique_ptr<window> window::default_window()
+{
 
-        return std::make_unique<window>();
+    return std::make_unique<window>();
     }
 
 
