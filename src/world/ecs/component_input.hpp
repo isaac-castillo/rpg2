@@ -7,12 +7,12 @@
 namespace ecs{ 
 
 class entity;
-    class component_input : public component {
-        
-        public:
+class component_input : public component {
+    
+    public:
 
-            virtual void update(entity &entity, float delta) = 0;
-    };
+        virtual void update(entity &entity, float delta) = 0;
+};
 
 }
 #endif

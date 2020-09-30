@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="8" height="7" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="atlas.tsx"/>
+ <layer name="ground" width="8" height="7" offsetx="-82" offsety="-51">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYMSDORkYDmDDzEA5EGYjgDmRMDcDgwMbhD4AE0O2i52BoYENQmN1CyvUTFLkATSEBwU=
+  </data>
+ </layer>
+ <layer name="collision" width="8" height="7" opacity="0.5" offsetx="-82" offsety="-51">
+  <data encoding="base64" compression="zlib">
+   eJxjYIAARjSMDmgtTysAAAsAABE=
+  </data>
+ </layer>
+</map>

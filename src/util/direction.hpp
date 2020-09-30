@@ -1,12 +1,17 @@
+#ifndef __direction__
+#define __direction__
 
-namespace util {
-    
-    enum class direction {
+namespace util
+{
 
-        LEFT,
-        UP,
-        DOWN,
-        RIGHT
-    };
+enum class direction
+{
+
+    LEFT,
+    UP,
+    DOWN,
+    RIGHT
+};
 
 }
+#endif
