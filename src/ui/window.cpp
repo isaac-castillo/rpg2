@@ -2,10 +2,13 @@
 #include "SFML/Graphics/Drawable.hpp"
 #include "SFML/Graphics/Sprite.hpp"
 #include <algorithm>
+#include "util/global.hpp"
 namespace ui
 {
 
-window::window() : RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "rpg2"){
+
+
+window::window() : RenderWindow(sf::VideoMode(WIDTH, HEIGHT), global::GAMENAME){
 
 };
 

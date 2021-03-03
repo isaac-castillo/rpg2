@@ -1,5 +1,7 @@
 #include "component_physics.hpp"
+
 #include <iostream>
+#include "world/map_manager.hpp"
 namespace ecs
 {
 
@@ -35,7 +37,8 @@ void component_physics::update(entity &entity, world::map_manager &map_manager, 
             tile_transfer = std::make_unique<tile_tween>(current_position, new_position, 0.5f);
             entity.set_moving(util::moving::MOVING);
 
-            if (collides_with_any(entity, new_position, map_manager))
+ 
+            if (map_manager.is_collision_tile(new_position) || collides_with_any(entity, new_position, map_manager))
             {
                 entity.set_moving(util::moving::NOT_MOVING);
             }
@@ -65,7 +68,11 @@ bool component_physics::collides_with(sf::Vector2f & pos, entity &e2)
     return pos.x == e2.position().x && pos.y == e2.position().y;
 
 }
-entity *component_physics::collides_with_any(ecs::entity &self, sf::Vector2f &pos, world::map_manager &map_manager){
+entity * component_physics::collides_with_any(ecs::entity &self, sf::Vector2f &pos, world::map_manager &map_manager){
+
+    if(map_manager.is_collision_tile(pos)){
+
+    }
     for (ecs::entity * entity : map_manager.get_entities()){
 
         if (collides_with(pos, *entity) && &self != entity)

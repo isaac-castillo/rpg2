@@ -7,10 +7,10 @@ namespace util
 enum class moving
 {
 
-    MOVING,
-    NOT_MOVING,
-    IMMOBILE,
-    STARTED
+    MOVING,                 
+    NOT_MOVING,             
+    IMMOBILE,               
+    STARTED             //STARTED behaves as a `flag` to initiate certain behaviors.
 };
 }
 #endif

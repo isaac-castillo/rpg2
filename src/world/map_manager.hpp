@@ -5,7 +5,7 @@
 #include <unordered_map> 
 #include <SFML/System/Vector2.hpp>
 #include <vector>
-
+#include "tilemap/tilemap.hpp"
 namespace ecs
 {
     class entity;
@@ -16,12 +16,15 @@ namespace world {
 
         private:
             std::vector<ecs::entity *> entities;
-            std::unordered_map<ecs::entity *, sf::Vector2f> positions;
+            // std::unordered_map<ecs::entity *, sf::Vector2f> positions;
+            world::tile::tilemap * t;   
 
         public:
             std::vector<ecs::entity *> get_entities();
-            // void load_tilemap(std::string filename);
-            std::vector<ecs::entity> add_entity(ecs::entity & entity);
+            void add_entity(ecs::entity & entity);
+
+            bool is_collision_tile(const sf::Vector2f & point) const;
+            void inject_tilemap(world::tile::tilemap &);
 
     };
 

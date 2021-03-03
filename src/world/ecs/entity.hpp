@@ -18,7 +18,6 @@ namespace ecs {
     class component_input;
     class component_graphics;
     class component_physics;
-
     class entity {
         
         private:

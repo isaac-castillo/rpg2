@@ -6,6 +6,10 @@
 #include <SFML/Graphics/Sprite.hpp>
 
 namespace ui {
+
+
+
+
     class window : public sf::RenderWindow {
 
         private:
@@ -19,6 +23,13 @@ namespace ui {
             void add_sprite(sf::Sprite &sprite);
             void draw_sprites();
             void clear_window();
+    };
+
+    class Drawable
+    {
+
+    public:
+        virtual void draw(ui::window &) = 0;
     };
 }
 

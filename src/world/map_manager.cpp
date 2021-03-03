@@ -2,15 +2,22 @@
 
 namespace world {
 
-    // void map_manager::load_tilemap(std::string filename){
-        
-    // }
-
     std::vector<ecs::entity *> map_manager::get_entities(){
         return entities;
     }
     
-    std::vector<ecs::entity> map_manager::add_entity(ecs::entity &entity){
+    void map_manager::add_entity(ecs::entity &entity){
         entities.push_back(&entity);
+
+    }
+
+    bool map_manager::is_collision_tile(const sf::Vector2f &point) const{
+
+
+        auto tile = t->pointToTile(point);
+        return tile.has_collision();
+    }
+    void map_manager::inject_tilemap(world::tile::tilemap & tm){
+        t = &tm;
     }
 }
