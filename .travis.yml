@@ -7,6 +7,10 @@ python: "3.8"
 compiler:
   - gcc
 
+before-install:
+  sudo apt-get update
+  sudo apt-get -y install libgl1-mesa-dev
+  
 install:
   pip install conan --user
 
