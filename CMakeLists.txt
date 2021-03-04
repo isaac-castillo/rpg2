@@ -22,6 +22,8 @@ conan_add_remote(
   conan_cmake_run(
     REQUIRES
     ${CONAN_EXTRA_REQUIRES}
+    catch2/2.13.3
+    sfml/2.5.1@bincrafters/stable
     OPTIONS
     ${CONAN_EXTRA_OPTIONS}
     BASIC_SETUP
