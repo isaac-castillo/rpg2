@@ -8,8 +8,7 @@ compiler:
   - gcc
 
 install:
-  pip install conan
-  conan user
+  pip install conan --user
 
 script:
   - mkdir build
