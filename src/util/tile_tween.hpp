@@ -29,7 +29,7 @@ class tile_tween {
         }
 
         bool finished(){
-            return m_tween.progress() >= 0.98;
+            return m_tween.progress() >= 0.98f;
         }
 
 };

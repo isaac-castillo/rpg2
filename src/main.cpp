@@ -33,8 +33,8 @@ int main(){
         
         sf::Time elapsed = clock.restart();
         
-        for(ecs::entity * e : m.get_entities()){
-            e->update(m, *window, elapsed.asSeconds());
+        for(ecs::entity * entity : m.get_entities()){
+            entity->update(m, *window, elapsed.asSeconds());
         }
         
         clock.restart();

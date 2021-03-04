@@ -18,7 +18,6 @@ if curr_folder != 'rpg2':
     sys.exit()
 
 #make a build directory for CMake
-
 if not args.cmake and os.path.exists('build'):
     os.chdir('build')
 
@@ -41,11 +40,11 @@ if res.returncode == 0:
     shutil.move('src/rpg2', '..')
 
 
-    for test in tests:
-        print(test)
-        if os.path.exists('../{}_tests'.format(test)):
-            os.remove('../{}_tests'.format(test))
-        shutil.move('tests/{}/{}_tests'.format(test, test), '..')
+    # for test in tests:
+    #     print(test)
+    #     if os.path.exists('../{}_tests'.format(test)):
+    #         os.remove('../{}_tests'.format(test))
+    #     shutil.move('tests/{}/{}_tests'.format(test, test), '..')
 
 
 print("done")

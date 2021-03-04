@@ -16,10 +16,10 @@ namespace world {
 
         private:
             std::vector<ecs::entity *> entities;
-            // std::unordered_map<ecs::entity *, sf::Vector2f> positions;
-            world::tile::tilemap * t;   
+            world::tile::tilemap * t = nullptr;   
 
         public:
+            map_manager();
             std::vector<ecs::entity *> get_entities();
             void add_entity(ecs::entity & entity);
 

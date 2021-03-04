@@ -1,7 +1,7 @@
 #include "component_animation.hpp"
 namespace ecs {
 
-    component_animation::component_animation(std::vector<sf::IntRect> frames, std::vector<float> time_in_frames) : m_frames(frames), m_time_in_frames(time_in_frames){
+    component_animation::component_animation(const std::vector<sf::IntRect> & frames, const std::vector<float>  &time_in_frames) : m_frames(frames), m_time_in_frames(time_in_frames){
 
     }
 

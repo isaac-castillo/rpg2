@@ -10,7 +10,6 @@ namespace ecs {
     class component_physics : public component
     {
     private:
-        int m_id;
         sf::Vector2f m_velocity;
         sf::Vector2f m_position;
         util::rectangle m_bounding_box;
@@ -24,7 +23,7 @@ namespace ecs {
 
 
     public:
-        component_physics(float tile_width);
+        explicit component_physics(float tile_width);
 
         virtual void update(entity &entity, world::map_manager &map_manager, float delta);
         bool collides_with(sf::Vector2f &pos, entity &e2);

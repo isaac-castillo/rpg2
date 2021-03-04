@@ -2,6 +2,10 @@
 
 namespace world {
 
+    map_manager::map_manager(){
+
+    }
+
     std::vector<ecs::entity *> map_manager::get_entities(){
         return entities;
     }

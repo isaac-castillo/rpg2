@@ -39,7 +39,7 @@ namespace ecs {
             void update(world::map_manager &map_manager, ui::window &window, float delta);
             static std::unique_ptr<entity> create_default_player();
             static std::unique_ptr<entity> create_default_test_npc();
-            static std::unique_ptr<entity> create_from_json(std::string filename);
+            static std::unique_ptr<entity> create_from_json(const std::string & filename);
             void set_input(std::unique_ptr<component_input> &input);
             void set_physics(std::unique_ptr<component_physics> &physics);
             void set_graphics(std::unique_ptr<component_graphics> &graphics);

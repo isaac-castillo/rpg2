@@ -3,7 +3,7 @@
 #include <utility>
 namespace ecs {
     
-    std::unique_ptr<entity> entity::create_from_json(std::string filename){
+    std::unique_ptr<entity> entity::create_from_json(const std::string & filename){
 
 
     }
