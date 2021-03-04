@@ -8,12 +8,12 @@ compiler:
   - gcc
 
 before_install:
-  sudo apt-get update
-  sudo apt-get -y install libgl1-mesa-dev
+  - sudo apt-get update
+  - sudo apt-get -y install libgl1-mesa-dev
   
 install:
-  pip install conan --user
-
+  - pip install conan --user
+  
 script:
   - mkdir build
   - cd build
