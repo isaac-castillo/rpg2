@@ -2,15 +2,22 @@ os: linux
 dist: bionic
 
 language: cpp
+python: "3.8"
 
 compiler:
   - gcc
 
+install:
+  pip install conan
+  conan user
+
 script:
   - mkdir build
   - cd build
+  - conan install .
   - cmake ..
   - cmake --build . 
+
 
 
 
