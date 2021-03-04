@@ -1,6 +1,7 @@
 #ifndef __tilemap__
 #define __tilemap__
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 #include <tmxlite/Map.hpp>
 #include <tmxlite/TileLayer.hpp>
