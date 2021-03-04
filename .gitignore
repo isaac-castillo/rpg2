@@ -63,3 +63,8 @@ src/assets/images
 CMakeFiles/
 CMakeCache.txt
 *.cmake
+
+
+
+rpg2
+*/Makefile
