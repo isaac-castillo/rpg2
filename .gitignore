@@ -62,7 +62,6 @@ src/assets/images
 .vscode
 CMakeFiles/
 CMakeCache.txt
-*.cmake
 
 
 
