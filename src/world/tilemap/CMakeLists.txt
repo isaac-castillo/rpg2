@@ -7,5 +7,7 @@ tilemap.cpp
 RenderLayer.cpp
 )
 
+target_link_libraries(tilemap CONAN_PKG::sfml)
+
 
 

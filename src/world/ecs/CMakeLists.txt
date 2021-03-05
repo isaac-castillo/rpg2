@@ -6,3 +6,5 @@ component_graphics.cpp
 component_input_player.cpp
 component_physics.cpp
 )
+
+target_link_libraries(ecs CONAN_PKG::sfml)

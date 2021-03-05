@@ -6,4 +6,7 @@ add_library(world
 map_manager.cpp
 )
 
+target_link_libraries(world CONAN_PKG::sfml)
+
+
 
