@@ -32,12 +32,12 @@ res = subprocess.run(['cmake', '--build', '.'], check=True)
 
 
 
-tests = ['ui', 'world']
+# tests = ['ui', 'world']
 
-if res.returncode == 0:
-    if os.path.exists('../rpg2'):
-        os.remove('../rpg2')
-    shutil.move('src/rpg2', '..')
+# if res.returncode == 0:
+#     if os.path.exists('../rpg2'):
+#         os.remove('../rpg2')
+#     shutil.move('src/rpg2', '..')
 
 
     # for test in tests:
