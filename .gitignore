@@ -67,3 +67,6 @@ CMakeCache.txt
 
 rpg2
 */Makefile
+tmxlite/build/cmake_install.cmake
+tmxlite/build/libtmxlite.so
+tmxlite/build/Makefile
