@@ -16,7 +16,7 @@ install:
   - cd tmxlite && mkdir build && cd build
   - cmake .. 
   - sudo make install 
-  
+  - cd ${TRAVIS_BUILD_DIR}
 script:
 
   - mkdir build
