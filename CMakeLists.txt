@@ -23,7 +23,7 @@ CMAKE_TARGETS # individual targets to link to
 BUILD
 missing)
 
-include_directories(tmxlite)
+# include_directories(tmxlite)
 
 include_directories(SYSTEM external)
 include_directories(src)

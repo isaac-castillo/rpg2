@@ -13,6 +13,9 @@ before_install:
   
 install:
   - pip install conan --user
+  - cd tmxlite && mkdir build && cd build
+  - cmake .. 
+  - sudo make install 
   
 script:
 
