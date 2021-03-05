@@ -20,7 +20,10 @@ script:
   - cd build
   - cmake ..
   - cmake --build . 
+  - cat compile_commands.json
 
 
-
+after_failure:
+  - cd build
+  - cat compile_commands.json
 

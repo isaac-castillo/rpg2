@@ -3,7 +3,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE DEBUG)
 
 project(rpg2)
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(cmake/Conan.cmake)
 conan_add_remote(
     NAME
