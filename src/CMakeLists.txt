@@ -8,7 +8,7 @@ add_executable(rpg2 main.cpp)
 
 
 target_link_libraries(rpg2 ui ecs world tilemap)
-target_link_libraries(rpg2 sfml-graphics-d sfml-window-d sfml-system-d sfml-audio-d tmxlite)
+target_link_libraries(rpg2 CONAN_PKG::sfml tmxlite)
 
 
 target_compile_options(rpg2 PRIVATE -Wall -Wextra -Wshadow -pedantic -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion
