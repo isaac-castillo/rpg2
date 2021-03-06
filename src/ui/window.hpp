@@ -30,6 +30,7 @@ namespace ui {
 
     public:
         virtual void draw(ui::window &) = 0;
+        virtual ~Drawable() = default;
     };
 }
 

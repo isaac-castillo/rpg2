@@ -2,8 +2,9 @@
 #define __component__
 class component {
 
-
-    virtual void receive() = 0; 
+    public:
+        virtual void receive() = 0; 
+        virtual ~component() = default;
 
 };
 #endif

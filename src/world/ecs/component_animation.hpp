@@ -7,7 +7,7 @@
 
 namespace ecs {
 
-    class component_animation : component {
+    class component_animation : public component {
 
         private:
             sf::Texture m_texture;
