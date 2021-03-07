@@ -21,7 +21,7 @@ namespace world {
         auto tile = t->pointToTile(point);
         return tile.has_collision();
     }
-    void map_manager::inject_tilemap(world::tile::tilemap & tm){
+    void map_manager::inject_tilemap(world::tile::Tilemap & tm){
         t = &tm;
     }
 }

@@ -10,23 +10,23 @@
 #include <vector>
 #include <utility>
 
-#include "world/tilemap/tile.hpp"
+#include "world/tilemap/Tile.hpp"
 #include "ui/window.hpp"
 
 namespace world::tile
 {
 
-class tilemap : public ui::Drawable
+class Tilemap : public ui::Drawable
 {
 
     using Textures = std::unordered_map<LayerType, std::unique_ptr<sf::Texture>>;
     using Tiles = std::vector<Tile>;
     using Positions = std::vector<std::pair<int, int>>;
 
-        public : 
+        public: 
 
     //Factory    
-    static tilemap load_from_file(std::string name);
+    static Tilemap load_from_file(std::string name);
     void draw(ui::window &window) override;
 
     int row_count() const;
@@ -35,7 +35,7 @@ class tilemap : public ui::Drawable
     Tile pointToTile(const sf::Vector2f &point);
 
 private:
-    tilemap(int m_num_rows, int m_num_columns, int m_tile_width, int m_tile_height);
+    Tilemap(int m_num_rows, int m_num_columns, int m_tile_width, int m_tile_height);
 
     const int m_num_rows{0};
     const int m_num_columns{0};

@@ -1,6 +1,6 @@
 #include <catch2/catch.hpp>
 
-#include "world/tilemap/tile.hpp"
+#include "world/tilemap/Tile.hpp"
 
 namespace world {
 

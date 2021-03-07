@@ -3,15 +3,18 @@
 #include "ui/window.hpp"
 #include "world/map_manager.hpp"
 #include "world/ecs/entity.hpp"
-#include "world/tilemap/tilemap.hpp"
+#include "world/tilemap/Tilemap.hpp"
+
 int main(){
+
+
 
 
 
     auto window = ui::window::default_window();
     auto player = ecs::entity::create_default_player();
 
-    world::tile::tilemap tm = world::tile::tilemap::load_from_file("src/assets/tiles.tmx");
+    world::tile::Tilemap tilemap = world::tile::Tilemap::load_from_file("src/assets/tiles.tmx");
 
     world::map_manager m;
 
@@ -27,10 +30,10 @@ int main(){
 
         window->clear_window();
 
-        tm.draw(*window);
+        tilemap.draw(*window);
 
-        m.inject_tilemap(tm);
-        
+        m.inject_tilemap(tilemap);
+
         sf::Time elapsed = clock.restart();
         
         for(ecs::entity * entity : m.get_entities()){

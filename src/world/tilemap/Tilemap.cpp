@@ -1,4 +1,4 @@
-#include "tilemap.hpp"
+#include "Tilemap.hpp"
 
 #include <memory>
 #include <tmxlite/TileLayer.hpp>
@@ -11,16 +11,17 @@ namespace world::tile
 constexpr int GROUND_LAYER = 0;
 constexpr int COLLISION_LAYER = 1;
 
-tilemap::tilemap(int columns, int rows, int tile_height_in_pixels, int tile_width_in_pixels) : m_num_columns(columns),
+Tilemap::Tilemap(int columns, int rows, int tile_height_in_pixels, int tile_width_in_pixels) : m_num_columns(columns),
                                                                                                m_num_rows(rows),
                                                                                                m_tile_height(tile_height_in_pixels),
                                                                                                m_tile_width(tile_width_in_pixels),
                                                                                                m_tiles(Tiles(columns * rows)),
                                                                                                m_pos(Positions(columns * rows)) {}
 
-tilemap tilemap::load_from_file(std::string name)
+Tilemap Tilemap::load_from_file(std::string name)
 {
 
+    
     tmx::Map tmxmap;
     tmxmap.load(name);
     const auto [tile_width, tile_height] = tmxmap.getTileSize();
@@ -35,14 +36,14 @@ tilemap tilemap::load_from_file(std::string name)
 
     const auto total_tiles = num_columns * num_rows;
 
-    tilemap tm(num_columns, num_rows, tile_height, tile_width);
+    Tilemap tm(num_columns, num_rows, tile_height, tile_width);
 
     /* Populate the ground layer */
     tm.read_and_populate(tmxmap, GROUND_LAYER, LayerType::ground_layer);
     return tm;
 }
 
-void tilemap::read_and_populate(const tmx::Map &tmxmap, int LAYER_INDEX, LayerType _layer)
+void Tilemap::read_and_populate(const tmx::Map &tmxmap, int LAYER_INDEX, LayerType _layer)
 {
 
     const auto tiles = tmxmap.getLayers()[0]->getLayerAs<tmx::TileLayer>().getTiles();
@@ -97,17 +98,17 @@ void tilemap::read_and_populate(const tmx::Map &tmxmap, int LAYER_INDEX, LayerTy
     }
 }
 
-int tilemap::column_count() const
+int Tilemap::column_count() const
 {
     return m_num_columns;
 }
 
-int tilemap::row_count() const
+int Tilemap::row_count() const
 {
     return m_num_rows;
 }
 
-void tilemap::draw(ui::window &window)
+void Tilemap::draw(ui::window &window)
 {
 
     for (int r = 0; r < m_num_rows; r++)
@@ -121,7 +122,7 @@ void tilemap::draw(ui::window &window)
     }
 }
 
-void tilemap::doFlips(std::uint8_t bits, sf::Sprite &sprite)
+void Tilemap::doFlips(std::uint8_t bits, sf::Sprite &sprite)
 {
     //0000 = no change
     //0100 = vertical = swap y axis
@@ -194,7 +195,7 @@ void tilemap::doFlips(std::uint8_t bits, sf::Sprite &sprite)
     }
 }
 
-void tilemap::flipY(sf::Sprite &sprite)
+void Tilemap::flipY(sf::Sprite &sprite)
 {
     //Flip Y
     int width = sprite.getTextureRect().width;
@@ -202,7 +203,7 @@ void tilemap::flipY(sf::Sprite &sprite)
     sprite.setTextureRect(sf::IntRect(sprite.getTextureRect().left, sprite.getTextureRect().top + height, width, -height));
 }
 
-void tilemap::flipX(sf::Sprite &sprite)
+void Tilemap::flipX(sf::Sprite &sprite)
 {
     //Flip X
     int width = sprite.getTextureRect().width;
@@ -214,7 +215,7 @@ void tilemap::flipX(sf::Sprite &sprite)
     sprite.setTextureRect(sf::IntRect(sprite.getTextureRect().left + width, sprite.getTextureRect().top, -width, height));
 }
 
-void tilemap::flipD(sf::Sprite &sprite)
+void Tilemap::flipD(sf::Sprite &sprite)
 {
     //Todo;
     //Diagonal flip
@@ -223,7 +224,7 @@ void tilemap::flipD(sf::Sprite &sprite)
     sprite.setTextureRect(sf::IntRect(width, 0, -width, height));
 }
 
-Tile tilemap::pointToTile(const sf::Vector2f &point){
+Tile Tilemap::pointToTile(const sf::Vector2f &point){
 
     const int col = point.x / m_tile_width;
     const int row = point.y / m_tile_height;

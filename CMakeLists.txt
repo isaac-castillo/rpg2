@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_BUILD_TYPE DEBUG)
+set(CMAKE_BUILD_TYPE Debug)
 
 project(rpg2)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -23,11 +23,17 @@ CMAKE_TARGETS # individual targets to link to
 BUILD
 missing)
 
-# include_directories(tmxlite)
+# Find TMXLITE
+
+SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+find_package(TMXLITE REQUIRED)
+
+#Treat these external includes as system-level packages (Ignores some compile warnings)
+
+include_directories(${TMXLITE_INCLUDE_DIR})
 
 include_directories(SYSTEM external)
 include_directories(src)
-
 #link_directories(lib)
 # link_directories(lib/Debug)
 

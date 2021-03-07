@@ -7,6 +7,7 @@
 #include "RenderLayer.hpp"
 
 #include <utility>
+
 namespace world::tile {
 
     class Tile : public ui::Drawable {
