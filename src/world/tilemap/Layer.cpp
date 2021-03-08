@@ -12,9 +12,9 @@ bool Layer::is_collision() const
     return collision == Collision::True;
 }
 
-void Layer::set_collision(Collision isCollisionLayer)
+void Layer::set_collision(Collision collision)
 {
-    collision = isCollisionLayer;
+    this->collision = collision;
 }
 
 } // namespace world::tile

@@ -5,7 +5,7 @@ namespace ecs {
     
     std::unique_ptr<entity> entity::create_from_json(const std::string & filename){
 
-
+        return nullptr;
     }
 
     void entity::update(world::map_manager &map_manager, ui::window &window, float delta){

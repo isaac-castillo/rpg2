@@ -23,7 +23,7 @@ private:
     Collision collision{ Collision::False };
 
 public:
-    explicit Layer(Collision collision = Collision::False);
+    explicit Layer(Collision isCollisionLayer = Collision::False);
     bool is_collision() const;
     void set_collision(Collision collision);
 

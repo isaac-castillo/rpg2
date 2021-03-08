@@ -12,6 +12,9 @@
 #include "util/direction.hpp"
 #include <utility>
 #include "unordered_map"
+#include "util/update.hpp"
+
+
 namespace ecs {
     
     class entity;
@@ -26,7 +29,7 @@ namespace ecs {
         public: 
             component_graphics();
             void add_direction_animation(util::direction direction, std::unique_ptr<component_animation> &animation);
-            void update(entity &entity, ui::window &window, float delta);
+            void update(entity &entity, ui::window &window, Second delta);
             void receive() override;
     };
 

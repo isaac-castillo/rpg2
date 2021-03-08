@@ -34,7 +34,6 @@ Tilemap Tilemap::load_from_file(std::string name)
     std::cerr << "num rows: " << num_rows << std::endl;
     std::cerr << "num columns: " << num_columns << std::endl;
 
-    const auto total_tiles = num_columns * num_rows;
 
     Tilemap tm(num_columns, num_rows, tile_height, tile_width);
 

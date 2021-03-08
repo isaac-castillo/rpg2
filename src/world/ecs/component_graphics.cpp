@@ -8,7 +8,7 @@ namespace ecs {
 
         }
         
-        void component_graphics::update(entity &entity, ui::window &window, float delta){
+        void component_graphics::update(entity &entity, ui::window &window, Second delta){
 
 
 

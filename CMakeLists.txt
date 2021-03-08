@@ -4,6 +4,12 @@ set(CMAKE_BUILD_TYPE Debug)
 
 project(rpg2)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+
+# include(cmake/staticanalysis.cmake)
+
+
+
 include(cmake/Conan.cmake)
 conan_add_remote(
     NAME
@@ -28,14 +34,11 @@ missing)
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 find_package(TMXLITE REQUIRED)
 
-#Treat these external includes as system-level packages (Ignores some compile warnings)
-
 include_directories(${TMXLITE_INCLUDE_DIR})
 
 include_directories(SYSTEM external)
 include_directories(src)
-#link_directories(lib)
-# link_directories(lib/Debug)
+
 
 
 add_subdirectory(src)

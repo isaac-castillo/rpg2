@@ -86,6 +86,7 @@ entity * component_physics::collides_with_any(ecs::entity &self, sf::Vector2f &p
 util::rectangle &component_physics::get_bounding_box()
 {
 
+    // return util::rectangle();
 }
 
 void component_physics::receive(){

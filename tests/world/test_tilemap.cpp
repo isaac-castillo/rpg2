@@ -1,19 +1,19 @@
-// #include <catch2/catch.hpp>
+#include <catch2/catch.hpp>
 
-// #include "world/tilemap.hpp"
-// #include "ui/window.hpp"
-// namespace world {
+#include "world/tilemap/Tilemap.hpp"
 
 
-// TEST_CASE("test tilemap creation at center of screen")
-// {
-
-//     // auto w = ui::window::default_window();
-//     // //create a 12 x 10 tilemap
-//     // tilemap t();
+namespace world {
 
 
-// }
+TEST_CASE("load from tilemap")
+{
+
+ 
+    world::tile::Tilemap t = world::tile::Tilemap::load_from_file("hi");
 
 
-// }
+}
+
+
+}
