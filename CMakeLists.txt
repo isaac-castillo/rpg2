@@ -2,12 +2,11 @@ cmake_minimum_required(VERSION 3.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Debug)
 
-project(rpg2)
+project(rpg2 VERSION 0 LANGUAGES CXX)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
-# include(cmake/staticanalysis.cmake)
-
+include(cmake/staticanalysis.cmake)
 
 
 include(cmake/Conan.cmake)

@@ -10,7 +10,7 @@ TEST_CASE("load from tilemap")
 {
 
  
-    world::tile::Tilemap t = world::tile::Tilemap::load_from_file("hi");
+    // world::tile::Tilemap t = world::tile::Tilemap::load_from_file("hi");
 
 
 }

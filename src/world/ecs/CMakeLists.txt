@@ -7,4 +7,4 @@ component_input_player.cpp
 component_physics.cpp
 )
 
-target_link_libraries(ecs CONAN_PKG::sfml)
+target_link_libraries(ecs PUBLIC CONAN_PKG::sfml)

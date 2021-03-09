@@ -70,3 +70,4 @@ rpg2
 tmxlite/build/cmake_install.cmake
 tmxlite/build/libtmxlite.so
 tmxlite/build/Makefile
+tmxlite/build/install_manifest.txt

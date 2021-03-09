@@ -7,7 +7,7 @@ Tilemap.cpp
 RenderLayer.cpp
 )
 
-target_link_libraries(tilemap CONAN_PKG::sfml ${TMXLITE_LIBRARIES})
+target_link_libraries(tilemap PUBLIC CONAN_PKG::sfml PRIVATE ${TMXLITE_LIBRARIES})
 
 
 
