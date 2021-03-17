@@ -18,7 +18,7 @@ namespace ui {
             std::vector<sf::Sprite> m_drawables {};
 
         public:
-            static std::unique_ptr<window> default_window();
+            static window default_window();
             window();
             void add_sprite(sf::Sprite &sprite);
             void draw_sprites();

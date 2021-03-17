@@ -13,6 +13,9 @@
 #include "component_physics.hpp"
 #include "util/moving.hpp"
 #include "util/direction.hpp"
+
+#include "world/tilemap/Tile.hpp"
+
 namespace ecs {
 
     class component_input;
@@ -35,7 +38,6 @@ namespace ecs {
         
             entity();
 
-            
             void update(world::map_manager &map_manager, ui::window &window, float delta);
             static std::unique_ptr<entity> create_default_player();
             static std::unique_ptr<entity> create_default_test_npc();

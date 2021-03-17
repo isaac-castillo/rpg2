@@ -14,6 +14,7 @@ target_link_libraries(catch_main PUBLIC CONAN_PKG::catch2)
 
 add_subdirectory(world)
 add_subdirectory(ui)
+add_subdirectory(action)
 
 # # Add a file containing a set of constexpr tests
 # add_executable(constexpr_tests constexpr_tests.cpp)

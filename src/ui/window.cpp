@@ -12,9 +12,9 @@ window::window() : RenderWindow(sf::VideoMode(WIDTH, HEIGHT), global::GAMENAME){
 
 };
 
-std::unique_ptr<window> window::default_window()
+window window::default_window()
 {
-    return std::make_unique<window>();
+    return window();
 }
 
 void window::clear_window()

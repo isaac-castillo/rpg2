@@ -9,11 +9,13 @@ TEST_CASE("window default creation"){
 
     auto w = window::default_window();
 
-    auto size = w->getSize();
+    auto size = w.getSize();
     REQUIRE(size.x == 600);
     REQUIRE(size.y == 400);
 
 }
+
+
 
 
 

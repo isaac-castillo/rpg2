@@ -1,0 +1,54 @@
+A Behavior is a pair of Trigger and Actions
+
+
+
+Certain behaviors:
+
+
+    When a unit steps on a tile, it teleports to another tile.
+        Trigger:
+            onEnter({some tile); //attaches to the tile
+            When a unit enters a tile, the physics system it checks that this trigger is active, and calls the action on the enterring unit. 
+        Action:
+            TeleportTo({some location}); 
+    When the player talks to an NPC (Interaction), the NPC looks at the player.
+        Trigger:
+            onTalkTo({some entity})
+            When the player interacts with an NPC, the physics system checks that a trigger exists, and calls the action on the NPC.             
+        Action:
+            LookAt(player, {some entity})
+    When a tile is stepped on by a unit, it "activates", and when it is not stepped on, it deactivates.
+        Trigger:
+            onEnter({some tile})
+            When a unit enters the tile, the physics system checks that this trigger is active, and activates.
+        Action:
+            activate({some thing})
+
+
+BaseTriggers:
+
+    
+    Callback Trigger:
+        TileTriggerManager:
+           
+        setTrigger(Tile, Action, [onEnter, onExit, onTopOf]);        
+        onEnter() {
+            return Action; 
+        }
+        onExit() {
+            
+        }
+        
+    EntityTriggerManager:
+            setTrigger(Entity, Action, [onInteract, onStopInteract, onInteracting]);
+
+    
+   
+    SceneTriggerManager:
+
+        addTrigger(PollableTrigger, Action)
+        
+           
+        
+        
+

@@ -5,6 +5,7 @@
 #include "world/map_manager.hpp"
 #include "util/rectangle.hpp"
 #include "util/tile_tween.hpp"
+#include "world/tilemap/Tile.hpp"
 #include <memory>
 namespace ecs { 
     class component_physics : public component
@@ -27,7 +28,9 @@ namespace ecs {
 
         virtual void update(entity &entity, world::map_manager &map_manager, float delta);
         bool collides_with(sf::Vector2f &pos, entity &e2);
-        entity * collides_with_any(ecs::entity &self, sf::Vector2f &pos, world::map_manager &map_manager);
+
+
+        entity *collides_with_any(ecs::entity &self, sf::Vector2f &pos, world::map_manager &map_manager);
 
         void receive() override;
         sf::Vector2f get_position();

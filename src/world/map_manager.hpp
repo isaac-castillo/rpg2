@@ -1,32 +1,66 @@
-#ifndef __map_manager__
-#define __map_manager__
+#ifndef map_manager__
+#define map_manager__
 
 #include <string>
-#include <unordered_map> 
+#include <unordered_map>
 #include <SFML/System/Vector2.hpp>
 #include <vector>
 #include "tilemap/Tilemap.hpp"
-namespace ecs
-{
-    class entity;
+// #include "trigger/Trigger.hpp"
+#include "tilemap/BaseTilemap.hpp"
+namespace ecs {
+class entity;
 }
 namespace world {
 
-    class map_manager {
 
-        private:
-            std::vector<ecs::entity *> entities;
-            world::tile::Tilemap * t = nullptr;   
+using Entities = std::vector<ecs::entity *>;
+// using Triggers = const std::unordered_map<int, trigger::Trigger>;
 
-        public:
-            map_manager();
-            std::vector<ecs::entity *> get_entities();
-            void add_entity(ecs::entity & entity);
+class map_manager
+{
 
-            bool is_collision_tile(const sf::Vector2f & point) const;
-            void inject_tilemap(world::tile::Tilemap &);
+private:
+  Entities entities;
+  tile::Tilemap *t;
+  //   std::unordered_map<int, trigger::Trigger> triggers;
 
-    };
+public:
+  map_manager(const tile::BaseTilemap & tilemap) : t(&tile::Tilemap::create_base_tilemap(tilemap)){}
+  map_manager(tile::Tilemap &tilemap, const Entities &e = Entities()) : t(&tilemap), entities(e)
+  {
+  }
 
-}
+  Entities get_entities()
+  {
+    return entities;
+  }
+
+  void add_entity(ecs::entity &entity)
+  {
+    entities.push_back(&entity);
+  }
+
+  bool is_collision_tile(const sf::Vector2i &point) const
+  {
+
+
+    auto const tile = t->pointToTile(point);
+    return tile.has_collision();
+  }
+  void inject_tilemap(tile::Tilemap &tm)
+  {
+    t = &tm;
+  }
+
+  //   void add_trigger_to_tile(trigger::Trigger &trigger, int row, int column)
+  //   {
+
+  //     int index = row * t->column_count() + column;
+
+  //     triggers[index] = trigger;
+  //   }
+};
+
+}// namespace world
 #endif

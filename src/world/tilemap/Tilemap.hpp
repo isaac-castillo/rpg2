@@ -10,6 +10,7 @@
 #include <vector>
 #include <utility>
 
+#include "BaseTilemap.hpp"
 #include "world/tilemap/Tile.hpp"
 #include "ui/window.hpp"
 
@@ -25,24 +26,18 @@ class Tilemap : public ui::Drawable
 public:
   //Factory
   static Tilemap load_from_file(std::string name);
+  static Tilemap create_base_tilemap(const BaseTilemap & tilemap);
+  Tile pointToTile(sf::Vector2i point) const;
   void draw(ui::window &window) override;
 
-  int row_count() const;
-  int column_count() const;
-
-  Tile pointToTile(const sf::Vector2f &point);
 
 private:
-  Tilemap(int m_num_rows, int m_num_columns, int m_tile_width, int m_tile_height);
+  Tilemap(const BaseTilemap & tilemap);
 
-  const int m_num_rows{ 0 };
-  const int m_num_columns{ 0 };
-
-  const int m_tile_width{ 0 };
-  const int m_tile_height{ 0 };
 
   Textures m_textures;
-  Tiles m_tiles;
+  BaseTilemap baseTilemap;
+  Tiles tiles;
   Positions m_pos;
 
   void read_and_populate(const tmx::Map &tmxmap, int LAYER_INDEX, LayerType _layer);
