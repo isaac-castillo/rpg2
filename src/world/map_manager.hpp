@@ -21,12 +21,17 @@ class map_manager
 {
 
 private:
-  Entities entities;
   tile::Tilemap *t;
+  Entities entities;
   //   std::unordered_map<int, trigger::Trigger> triggers;
 
 public:
-  map_manager(const tile::BaseTilemap & tilemap) : t(&tile::Tilemap::create_base_tilemap(tilemap)){}
+  map_manager(const tile::BaseTilemap & tilemap) {
+
+
+      auto tm = tile::Tilemap::create_base_tilemap(tilemap);
+      t = &tm;
+  }
   map_manager(tile::Tilemap &tilemap, const Entities &e = Entities()) : t(&tilemap), entities(e)
   {
   }

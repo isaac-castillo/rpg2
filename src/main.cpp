@@ -26,7 +26,7 @@ int main(){
     // Action::MoveAction action;
 
     world::Entities entities { e.get(), player.get() };
-    world::map_manager mm( { entities }, tilemap);
+    world::map_manager mm( tilemap, entities);
 
     /* Old API, Unused */
     // m.add_entity(*e);

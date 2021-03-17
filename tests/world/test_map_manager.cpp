@@ -2,6 +2,7 @@
 
 #include "world/map_manager.hpp"
 #include "world/tilemap/BaseTile.hpp"
+#include "world/tilemap/BaseTilemap.hpp"
 #include "world/ecs/entity.hpp"
 #include <vector>
 
@@ -18,11 +19,11 @@ TEST_CASE("map_manager constructors")
 
   Entities entities;
 
-  MapManager mm(entities, t);
+  MapManager mm(t, entities);
   REQUIRE( mm.is_collision_tile({ 0,0 }));
 
 
-  MapManager mm2;
+  MapManager mm2(world::tile::BaseTilemap(5,5,2,2));
 
 }
 
