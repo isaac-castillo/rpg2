@@ -3,30 +3,26 @@
 
 namespace world::tile {
 
-enum class LayerType
-{
+  enum class LayerType {
     ground_layer,
     middle_layer,
     top_layer
-};
+  };
 
-
-enum class Collision {
+  enum class Collision {
     True,
     False
-};
+  };
 
-class Layer
-{
+  class Layer {
 
-private:
+  private:
     Collision collision{ Collision::False };
 
-public:
+  public:
     explicit Layer(Collision isCollisionLayer = Collision::False);
     bool is_collision() const;
     void set_collision(Collision collision);
-
-    };
-}
+  };
+}// namespace world::tile
 #endif

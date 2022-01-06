@@ -3,16 +3,14 @@
 #include "component.hpp"
 #include "entity.hpp"
 
+namespace ecs {
 
-namespace ecs{ 
+  class entity;
+  class component_input : public component {
 
-class entity;
-class component_input : public component {
-    
-    public:
+  public:
+    virtual void update(entity &entity, float delta) = 0;
+  };
 
-        virtual void update(entity &entity, float delta) = 0;
-};
-
-}
+}// namespace ecs
 #endif

@@ -8,28 +8,25 @@
 
 namespace world::tile {
 
+  class BaseTile {
 
-class BaseTile
-{
+  private:
+    Layer collisionLayer;
 
-
-private:
-  Layer collisionLayer;
-
-public:
-  Layer &get_collision_layer()
-  {
-    return collisionLayer;
-  }
-  bool has_collision() const
-  {
-    if (collisionLayer.is_collision()) {
-      return true;
+  public:
+    Layer &get_collision_layer()
+    {
+      return collisionLayer;
     }
+    bool has_collision() const
+    {
+      if (collisionLayer.is_collision()) {
+        return true;
+      }
 
-    return false;
-  }
-};
+      return false;
+    }
+  };
 
 }// namespace world::tile
 #endif

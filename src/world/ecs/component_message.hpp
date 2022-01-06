@@ -2,9 +2,9 @@
 #define __component_message__
 enum class component_message {
 
-    current_position,
-    collision, 
-    selected
+  current_position,
+  collision,
+  selected
 
 };
 

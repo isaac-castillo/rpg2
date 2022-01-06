@@ -1,62 +1,58 @@
 #ifndef __entity__
 #define __entity__
 
+#include "ui/window.hpp"
 #include <SFML/Graphics/Sprite.hpp>
-#include <string>
 #include <memory>
 #include <nlohmann/json.hpp>
-#include "ui/window.hpp"
+#include <string>
 
 #include "component.hpp"
-#include "component_input.hpp"
 #include "component_graphics.hpp"
+#include "component_input.hpp"
 #include "component_physics.hpp"
-#include "util/moving.hpp"
 #include "util/direction.hpp"
+#include "util/moving.hpp"
 
 #include "world/tilemap/Tile.hpp"
 
 namespace ecs {
 
-    class component_input;
-    class component_graphics;
-    class component_physics;
-    class entity {
-        
-        private:
-            const int m_id;
-            std::vector<component> m_components;
+  class component_input;
+  class component_graphics;
+  class component_physics;
+  class entity {
 
-            std::unique_ptr<component_input> m_input;
-            std::unique_ptr<component_graphics> m_graphics;
-            std::unique_ptr<component_physics> m_physics;
+  private:
+    const int m_id;
+    std::vector<component> m_components;
 
-            util::direction m_direction;
-            util::moving m_moving;
+    std::unique_ptr<component_input> m_input;
+    std::unique_ptr<component_graphics> m_graphics;
+    std::unique_ptr<component_physics> m_physics;
 
-        public:
-        
-            entity();
+    util::direction m_direction;
+    util::moving m_moving;
 
-            void update(world::map_manager &map_manager, ui::window &window, float delta);
-            static std::unique_ptr<entity> create_default_player();
-            static std::unique_ptr<entity> create_default_test_npc();
-            static std::unique_ptr<entity> create_from_json(const std::string & filename);
-            void set_input(std::unique_ptr<component_input> &input);
-            void set_physics(std::unique_ptr<component_physics> &physics);
-            void set_graphics(std::unique_ptr<component_graphics> &graphics);
-            void set_direction(util::direction direction);
-            void set_moving(util::moving moving);
+  public:
+    entity();
 
-            sf::Vector2f position();
+    void update(world::map_manager &map_manager, ui::window &window, float delta);
+    static std::unique_ptr<entity> create_default_player();
+    static std::unique_ptr<entity> create_default_test_npc();
+    static std::unique_ptr<entity> create_from_json(const std::string &filename);
+    void set_input(std::unique_ptr<component_input> &input);
+    void set_physics(std::unique_ptr<component_physics> &physics);
+    void set_graphics(std::unique_ptr<component_graphics> &graphics);
+    void set_direction(util::direction direction);
+    void set_moving(util::moving moving);
 
-            util::direction get_direction();
-            util::moving get_moving();
-        };
+    sf::Vector2f position();
 
+    util::direction get_direction();
+    util::moving get_moving();
+  };
 
-}
-
+}// namespace ecs
 
 #endif
-

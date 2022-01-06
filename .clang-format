@@ -1,3 +1,4 @@
+#How to format the entire src folder: clang-format -i src/**/*.{cpp,hpp}
 AccessModifierOffset: -2
 AlignAfterOpenBracket: DontAlign
 AlignConsecutiveAssignments: false
@@ -18,7 +19,7 @@ AlwaysBreakTemplateDeclarations: false
 BinPackArguments: false
 BinPackParameters: false
 BraceWrapping:
-  AfterClass: true
+  AfterClass: false
   AfterControlStatement: false
   AfterEnum: false
   AfterFunction: true
@@ -63,7 +64,7 @@ IncludeCategories:
 - Priority: 1
   Regex: .*
 IncludeIsMainRegex: (Test)?$
-IndentCaseLabels: false
+IndentCaseLabels: true
 IndentWidth: 2
 IndentWrappedFunctionNames: true
 JavaScriptQuotes: Leave
@@ -72,14 +73,14 @@ KeepEmptyLinesAtTheStartOfBlocks: true
 Language: Cpp
 MacroBlockBegin: ''
 MacroBlockEnd: ''
-MaxEmptyLinesToKeep: 2
-NamespaceIndentation: Inner
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: All
 ObjCBlockIndentWidth: 7
 ObjCSpaceAfterProperty: true
 ObjCSpaceBeforeProtocolList: false
 PointerAlignment: Right
 ReflowComments: true
-SortIncludes: false
+SortIncludes: true
 SortUsingDeclarations: false
 SpaceAfterCStyleCast: false
 SpaceAfterTemplateKeyword: false

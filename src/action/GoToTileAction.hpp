@@ -6,20 +6,17 @@
 #include <SFML/System/Vector2.hpp>
 namespace action {
 
-using TileIndex = int;
-class GoToTileAction : public PhysicsAction
-{
+  using TileIndex = int;
+  class GoToTileAction : public PhysicsAction {
 
-private:
-
+  private:
     TileIndex tileIndex;
 
-public:
+  public:
+    GoToTileAction(TileIndex index);
+    void execute(ecs::component_physics &physics, world::map_manager &, Second delta) override;
+  };
 
-  GoToTileAction(TileIndex index);
-  void execute(ecs::component_physics & physics, world::map_manager &, Second delta) override;
-};
-
-}// namespace Action
+}// namespace action
 
 #endif
