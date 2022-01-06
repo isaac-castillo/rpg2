@@ -5,21 +5,25 @@ set(CMAKE_BUILD_TYPE Debug)
 project(rpg2 VERSION 0 LANGUAGES CXX)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-
 include(cmake/staticanalysis.cmake)
 
-
 include(cmake/Conan.cmake)
+set(ENV{CONAN_REVISIONS_ENABLED} 1)
+conan_add_remote(
+    NAME cci 
+    URL 
+    https://center.conan.io
+    )
 conan_add_remote(
     NAME
     bincrafters
     URL
-    https://api.bintray.com/conan/bincrafters/public-conan)
+    https://bincrafters.jfrog.io/artifactory/api/conan/public-conan)
 
 conan_cmake_run(
 REQUIRES
 ${CONAN_EXTRA_REQUIRES}
-catch2/2.13.3
+catch2/2.13.7
 sfml/2.5.1@bincrafters/stable
 OPTIONS
 ${CONAN_EXTRA_OPTIONS}
@@ -37,8 +41,6 @@ include_directories(${TMXLITE_INCLUDE_DIR})
 
 include_directories(SYSTEM external)
 include_directories(src)
-
-
 
 add_subdirectory(src)
 

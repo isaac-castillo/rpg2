@@ -12,6 +12,7 @@ before_install:
   - sudo apt-get -y install libgl1-mesa-dev
   
 install:
+# TODO: Add clang-tidy installation
   - pip install conan --user
   - cd tmxlite && mkdir build && cd build
   - cmake .. 
