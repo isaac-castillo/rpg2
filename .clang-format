@@ -1,3 +1,4 @@
+#How to format the entire src folder: clang-format -i src/**/*.{cpp,hpp}
 AccessModifierOffset: -2
 AlignAfterOpenBracket: DontAlign
 AlignConsecutiveAssignments: false
@@ -63,7 +64,7 @@ IncludeCategories:
 - Priority: 1
   Regex: .*
 IncludeIsMainRegex: (Test)?$
-IndentCaseLabels: false
+IndentCaseLabels: true
 IndentWidth: 2
 IndentWrappedFunctionNames: true
 JavaScriptQuotes: Leave

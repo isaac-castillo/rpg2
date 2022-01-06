@@ -14,20 +14,20 @@ namespace ecs {
       auto new_position = current_position;
       switch (entity.get_direction()) {
 
-      case util::direction::DOWN:
-        new_position = sf::Vector2f(current_position.x, current_position.y + m_tile_width);
-        break;
-      case util::direction::LEFT:
-        new_position = sf::Vector2f(current_position.x - +m_tile_width, current_position.y);
-        break;
-      case util::direction::RIGHT:
-        new_position = sf::Vector2f(current_position.x + m_tile_width, current_position.y);
-        break;
-      case util::direction::UP:
-        new_position = sf::Vector2f(current_position.x, current_position.y - m_tile_width);
-        break;
-      default:
-        new_position = sf::Vector2f(current_position.x, current_position.y + m_tile_width);
+        case util::direction::DOWN:
+          new_position = sf::Vector2f(current_position.x, current_position.y + m_tile_width);
+          break;
+        case util::direction::LEFT:
+          new_position = sf::Vector2f(current_position.x - +m_tile_width, current_position.y);
+          break;
+        case util::direction::RIGHT:
+          new_position = sf::Vector2f(current_position.x + m_tile_width, current_position.y);
+          break;
+        case util::direction::UP:
+          new_position = sf::Vector2f(current_position.x, current_position.y - m_tile_width);
+          break;
+        default:
+          new_position = sf::Vector2f(current_position.x, current_position.y + m_tile_width);
       }
 
       tile_transfer = std::make_unique<tile_tween>(current_position, new_position, 0.5f);
