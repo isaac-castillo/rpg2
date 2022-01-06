@@ -2,22 +2,20 @@
 #define __RenderLayer__
 
 #include "Layer.hpp"
-#include <SFML/Graphics/Sprite.hpp>
 #include "ui/window.hpp"
+#include <SFML/Graphics/Sprite.hpp>
 
-namespace world::tile
-{
+namespace world::tile {
 
-class RenderLayer final : public Layer, public ui::Drawable
-{
+  class RenderLayer final : public Layer
+    , public ui::Drawable {
 
-private:
+  private:
     sf::Sprite m_sprite;
 
-public:
+  public:
     RenderLayer(Collision collision = Collision::False, const sf::Sprite &sprite = sf::Sprite());
-    void draw(ui::window & window) override;
-
-};
-} // namespace world::tile
+    void draw(ui::window &window) override;
+  };
+}// namespace world::tile
 #endif

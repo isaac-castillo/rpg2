@@ -1,16 +1,14 @@
 #ifndef __moving__
 #define __moving__
 
-namespace util
-{
+namespace util {
 
-enum class moving
-{
+  enum class moving {
 
-    MOVING,                 
-    NOT_MOVING,             
-    IMMOBILE,               
-    STARTED             //STARTED behaves as a `flag` to initiate certain behaviors.
-};
+    MOVING,
+    NOT_MOVING,
+    IMMOBILE,
+    STARTED//STARTED behaves as a `flag` to initiate certain behaviors.
+  };
 }
 #endif

@@ -3,14 +3,11 @@
 
 #include <SFML/Graphics/Rect.hpp>
 namespace util {
-    
 
-    class rectangle : public sf::Rect<float> {
+  class rectangle : public sf::Rect<float> {
 
-        public:
-
-
-    };
-}
+  public:
+  };
+}// namespace util
 
 #endif

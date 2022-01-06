@@ -3,8 +3,8 @@
 #include <string>
 
 namespace global {
-    
-    static const std::string GAMENAME = "rpg2";
+
+  static const std::string GAMENAME = "rpg2";
 
 }
 #endif

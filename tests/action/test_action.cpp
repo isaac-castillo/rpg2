@@ -6,15 +6,13 @@
 TEST_CASE("test GoToTileAction")
 {
 
+  /* Empty map_manager */
 
-    /* Empty map_manager */
+  world::map_manager mm({ 5, 5, 2, 2 });
 
-    world::map_manager mm({5,5,2,2});
-    
-    ecs::component_physics physics(2);
-    
-    action::GoToTileAction goToTile(0);
-    goToTile.execute(physics, mm, 0);
-    REQUIRE ( physics.get_position() == sf::Vector2f({0,0}) ); 
+  ecs::component_physics physics(2);
 
+  action::GoToTileAction goToTile(0);
+  goToTile.execute(physics, mm, 0);
+  REQUIRE(physics.get_position() == sf::Vector2f({ 0, 0 }));
 }

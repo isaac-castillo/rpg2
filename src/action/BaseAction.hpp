@@ -1,28 +1,23 @@
 #ifndef __action__
 #define __action__
 
-#include "world/map_manager.hpp"
 #include "util/update.hpp"
 #include "world/ecs/component_physics.hpp"
+#include "world/map_manager.hpp"
 namespace action {
 
-class PhysicsAction {
+  class PhysicsAction {
 
-    public:
+  public:
     virtual void execute(ecs::component_physics &physics, world::map_manager &, Second delta) = 0;
-};
+  };
 
+  class BaseAction {
 
-class BaseAction
-{
+  public:
+    virtual void execute(world::map_manager &, Second delta) = 0;
+  };
 
-public:
-
-  virtual void execute(world::map_manager &, Second delta) = 0;
-  
-
-};
-
-}// namespace Action
+}// namespace action
 
 #endif
